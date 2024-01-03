@@ -13,5 +13,6 @@ import java.io.IOException;
 public class RegisterController {
     @FXML
     private Button RegisterButton;
+//    @FXML
 
 }
