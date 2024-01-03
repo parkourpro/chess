@@ -1,20 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.paint.Color?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Rectangle?>
 
-<GridPane xmlns="http://javafx.com/javafx"
-          xmlns:fx="http://javafx.com/fxml"
-
-          prefHeight="480.0" prefWidth="480.0">
+<GridPane prefHeight="480.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
 
   <!-- White squares -->
-  <Rectangle GridPane.columnIndex="0" GridPane.rowIndex="0" fill="WHITE" width="60" height="60" />
-  <Rectangle GridPane.columnIndex="1" GridPane.rowIndex="0" fill="BLACK" width="60" height="60" />
+  <Rectangle fill="WHITE" height="60" width="60" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+  <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="2" GridPane.rowIndex="1" />
   <!-- Repeat the pattern for the first row -->
-  <Rectangle GridPane.columnIndex="0" GridPane.rowIndex="1" fill="BLACK" width="60" height="60" />
-  <Rectangle GridPane.columnIndex="1" GridPane.rowIndex="1" fill="WHITE" width="60" height="60" />
+  <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+  <Rectangle fill="WHITE" height="60" width="60" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   <Rectangle fill="WHITE" height="60" width="60" GridPane.columnIndex="2" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="1" />
+   <Rectangle fill="WHITE" height="60" width="60" GridPane.rowIndex="4" />
+   <Rectangle fill="WHITE" height="60" width="60" GridPane.rowIndex="4" />
+   <Rectangle fill="WHITE" height="60" width="60" />
+   <Rectangle fill="WHITE" height="60" width="60" />
+   <Rectangle fill="WHITE" height="60" width="60" GridPane.columnIndex="5" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="5" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="7" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="9" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.rowIndex="5" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="9" GridPane.rowIndex="6" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.rowIndex="7" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="8" GridPane.rowIndex="7" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.rowIndex="9" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+   <Rectangle fill="BLACK" height="60" width="60" GridPane.columnIndex="9" GridPane.rowIndex="8" />
+   <Rectangle fill="WHITE" height="60" width="60" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
   <!-- ... Repeat the pattern for the entire chessboard -->
 
 </GridPane>
