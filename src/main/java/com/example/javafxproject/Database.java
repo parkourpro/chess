@@ -19,8 +19,12 @@ public class Database {
     public ResultSet executeQuery(String query) {
         ResultSet resultSet = null;
         try {
-            Statement statement = connection.createStatement();
-            resultSet = statement.executeQuery(query);
+            if (connection != null && !connection.isClosed()) {
+                Statement statement = connection.createStatement();
+                resultSet = statement.executeQuery(query);
+            } else {
+                System.out.println("Connection is closed or null. Cannot execute query.");
+            }
         } catch (SQLException e) {
             System.out.println("Query execution failed. Error: " + e.getMessage());
         }
@@ -52,35 +56,35 @@ public class Database {
         }
     }
 
-//    public static void main(String[] args) {
-//        // Database credentials
-//        String url = "jdbc:postgresql://localhost:5432/chess";
-//        String username = "postgres";
-//        String password = "namchamdien1";
-//
-//        Database connector = new Database();
-//        connector.connect(url, username, password);
-//
-//        // Example query execution - INSERT statements
-//        String insertQueryUsers = "select * from users";
-//        // Execute each insert query separately using executeUpdate()
-//
-//        // Execute the query
-//
-//        ResultSet resultSet = connector.executeQuery(insertQueryUsers);
-//
-//        try {
-//            // Loop through the ResultSet to access each row
-//            while (resultSet != null && resultSet.next()) {
-//                int userId = resultSet.getInt("user_id");
-//                String userName = resultSet.getString("user_name");
-//                // Extract other columns as needed
-//                System.out.println("User ID: " + userId + ", User Name: " + userName);
-//                // Print other information or perform operations
-//            }
-//        } catch (SQLException e) {
-//            System.out.println("Error processing ResultSet: " + e.getMessage());
-//        }
-//
-//    }
+    public static void main(String[] args) {
+        // Database credentials
+        String url = "jdbc:postgresql://localhost:5432/chess";
+        String username = "postgres";
+        String password = "020802";
+
+        Database connector = new Database();
+        connector.connect(url, username, password);
+
+        // Example query execution - INSERT statements
+        String insertQueryUsers = "select * from users";
+        // Execute each insert query separately using executeUpdate()
+
+        // Execute the query
+
+        ResultSet resultSet = connector.executeQuery(insertQueryUsers);
+
+        try {
+            // Loop through the ResultSet to access each row
+            while (resultSet != null && resultSet.next()) {
+                int userId = resultSet.getInt("user_id");
+                String userName = resultSet.getString("user_name");
+                // Extract other columns as needed
+                System.out.println("User ID: " + userId + ", User Name: " + userName);
+                // Print other information or perform operations
+            }
+        } catch (SQLException e) {
+            System.out.println("Error processing ResultSet: " + e.getMessage());
+        }
+
+    }
 }
