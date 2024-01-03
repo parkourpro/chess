@@ -64,10 +64,9 @@ public class Database {
         // Example query execution - INSERT statements
         String insertQueryUsers = "select * from users";
         // Execute each insert query separately using executeUpdate()
-<<<<<<< Updated upstream
+
         // Execute the query
-=======
->>>>>>> Stashed changes
+
         ResultSet resultSet = connector.executeQuery(insertQueryUsers);
 
         try {
