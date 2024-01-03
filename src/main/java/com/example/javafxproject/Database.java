@@ -19,8 +19,12 @@ public class Database {
     public ResultSet executeQuery(String query) {
         ResultSet resultSet = null;
         try {
-            Statement statement = connection.createStatement();
-            resultSet = statement.executeQuery(query);
+            if (connection != null && !connection.isClosed()) {
+                Statement statement = connection.createStatement();
+                resultSet = statement.executeQuery(query);
+            } else {
+                System.out.println("Connection is closed or null. Cannot execute query.");
+            }
         } catch (SQLException e) {
             System.out.println("Query execution failed. Error: " + e.getMessage());
         }
@@ -56,7 +60,7 @@ public class Database {
         // Database credentials
         String url = "jdbc:postgresql://localhost:5432/chess";
         String username = "postgres";
-        String password = "namchamdien1";
+        String password = "020802";
 
         Database connector = new Database();
         connector.connect(url, username, password);
