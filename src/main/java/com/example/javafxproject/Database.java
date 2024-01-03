@@ -56,7 +56,7 @@ public class Database {
         // Database credentials
         String url = "jdbc:postgresql://localhost:5432/chess";
         String username = "postgres";
-        String password = "020802";
+        String password = "namchamdien1";
 
         Database connector = new Database();
         connector.connect(url, username, password);
