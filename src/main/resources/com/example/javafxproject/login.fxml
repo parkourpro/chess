@@ -23,7 +23,7 @@
                   <Font size="23.0" />
                </font>
             </Label>
-            <Button fx:id="loginButton" layoutX="171.0" layoutY="207.0" mnemonicParsing="false" text="Login" />
+            <Button fx:id="loginButton" layoutX="171.0" layoutY="207.0" mnemonicParsing="false" onAction="#login" text="Login" />
             <Button fx:id="movetoregisterButton" layoutX="110.0" layoutY="281.0" mnemonicParsing="false" onAction="#moveToRegister" text="Dont have account? Register" />
             <PasswordField fx:id="passwordPassWordField" layoutX="125.0" layoutY="131.0" promptText="password" />
          </children>
