@@ -34,11 +34,12 @@ public class LoginController {
             String passWord = passwordPassWordField.getText();
             // Sending a login request to the server
             String request = "login,"+userName+","+passWord;
+            System.out.println(request);
             out.println(request);
 
             // Receive and print server response
             String response = in.readLine();
-            System.out.println("Server response: " + response);
+            System.out.println("Server login response: " + response);
             if(response.equals("success")) {
                 loadHomePage();
             } else {

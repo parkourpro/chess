@@ -15,17 +15,17 @@
    <right>
       <AnchorPane prefHeight="200.0" prefWidth="320.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="25.0" layoutY="77.0" text="Username" />
-            <TextField fx:id="usernameTextField" layoutX="125.0" layoutY="73.0" promptText="username" />
-            <Label layoutX="26.0" layoutY="135.0" text="Password" />
             <Label layoutX="142.0" layoutY="14.0" prefHeight="38.0" prefWidth="57.0" text="Login">
                <font>
                   <Font size="23.0" />
                </font>
             </Label>
+            <Label layoutX="25.0" layoutY="77.0" text="Username" />
+            <TextField fx:id="usernameTextField" layoutX="125.0" layoutY="73.0" promptText="username" />
+            <Label layoutX="26.0" layoutY="135.0" text="Password" />
+            <PasswordField fx:id="passwordPassWordField" layoutX="125.0" layoutY="131.0" promptText="password" />
             <Button fx:id="loginButton" layoutX="171.0" layoutY="207.0" mnemonicParsing="false" onAction="#login" text="Login" />
             <Button fx:id="movetoregisterButton" layoutX="110.0" layoutY="281.0" mnemonicParsing="false" onAction="#moveToRegister" text="Dont have account? Register" />
-            <PasswordField fx:id="passwordPassWordField" layoutX="125.0" layoutY="131.0" promptText="password" />
          </children>
       </AnchorPane>
    </right>
