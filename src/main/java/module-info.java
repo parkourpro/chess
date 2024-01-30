@@ -1,4 +1,4 @@
-module com.example.javafxproject {
+module com.example.chess {
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -6,6 +6,6 @@ module com.example.javafxproject {
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
 
-    opens com.example.javafxproject to javafx.fxml;
-    exports com.example.javafxproject;
+    opens com.example.chess to javafx.fxml;
+    exports com.example.chess;
 }

@@ -1,4 +1,4 @@
-package com.example.javafxproject;
+package com.example.chess;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,9 +17,9 @@ import java.net.Socket;
 
 public class LoginController {
     @FXML
-    private Button LoginButton;
+    private  Button loginButton;
     @FXML
-    private Button MoveToRegisterButton;
+    private Button movetoregisterButton;
     @FXML
     private TextField usernameTextField;
     @FXML
@@ -34,11 +34,12 @@ public class LoginController {
             String passWord = passwordPassWordField.getText();
             // Sending a login request to the server
             String request = "login,"+userName+","+passWord;
+            System.out.println(request);
             out.println(request);
 
             // Receive and print server response
             String response = in.readLine();
-            System.out.println("Server response: " + response);
+            System.out.println("Server login response: " + response);
             if(response.equals("success")) {
                 loadHomePage();
             } else {
@@ -47,11 +48,9 @@ public class LoginController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
-    @FXML
-    private void moveToRegister(ActionEvent event) {
+
+    public void moveToRegister(ActionEvent event) {
         try {
             // Load the FXML file for the registration window
             FXMLLoader loader = new FXMLLoader(getClass().getResource("register.fxml"));
@@ -59,32 +58,36 @@ public class LoginController {
 
             // Create a new stage for the registration window
             Stage registerStage = new Stage();
-            registerStage.setTitle("Registration");
             registerStage.setScene(new Scene(root));
-
-            // Show the registration window
             registerStage.show();
 
+            //get login stage
+            Stage loginStage = (Stage) movetoregisterButton.getScene().getWindow();
 
-            // Close the login stage
-            Stage loginStage = (Stage) MoveToRegisterButton.getScene().getWindow();
+            // Close login stage
             loginStage.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
     private void loadHomePage() {
 
         try {
+            // Load the FXML file for the home window
             FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
             Parent root = loader.load();
 
+            // Create a new stage for the home window
             Stage homeStage = new Stage();
             homeStage.setScene(new Scene(root));
             homeStage.show();
 
+            //get login stage
+            Stage loginStage = (Stage) loginButton.getScene().getWindow();
+
+            // Close login stage
+            loginStage.close();
 
 
         } catch (IOException e) {
