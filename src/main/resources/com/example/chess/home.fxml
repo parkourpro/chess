@@ -20,14 +20,14 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="74.0" layoutY="57.0" mnemonicParsing="false" text="Create Room" />
+            <Button fx:id="createroomButton" layoutX="74.0" layoutY="57.0" mnemonicParsing="false" text="Create Room" />
          </children>
       </AnchorPane>
    </center>
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Random Match" />
+            <Button fx:id="randommatchButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#randomMatch" text="Random Match" />
             <Button layoutX="14.0" layoutY="70.0" mnemonicParsing="false" text="Ranking Match" />
          </children>
       </AnchorPane>

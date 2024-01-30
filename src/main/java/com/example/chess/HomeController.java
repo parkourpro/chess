@@ -29,6 +29,8 @@ public class HomeController implements Initializable {
     private Button logoutButton;
     @FXML
     private Button searchplayerButton;
+    @FXML
+    private Button randommatchButton;
 
     // Phương thức để nhận thông tin người dùng
     public void initData(String username) {
@@ -96,6 +98,11 @@ public class HomeController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void randomMatch() {
+        System.out.println(123);
     }
 
     @Override
