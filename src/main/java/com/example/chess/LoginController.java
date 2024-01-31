@@ -30,7 +30,7 @@ public class LoginController {
 
     @FXML
     public void login() {
-        ConnectionManager.connect();
+//        ConnectionManager.connect();
 
         String userName = usernameTextField.getText();
         String passWord = passwordPassWordField.getText();

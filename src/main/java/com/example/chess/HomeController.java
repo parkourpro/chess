@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 public class HomeController implements Initializable {
 
     private String usernameLogined;
+    private String characternameLogined;
     @FXML
     private Label characternameLabel;
     @FXML
@@ -45,6 +46,7 @@ public class HomeController implements Initializable {
         assert response != null;
         String[] parts = response.split(",");
         String charactername = parts[2];
+        characternameLogined = charactername;
         String elo = parts[3];
         characternameLabel.setText(charactername);
         eloLabel.setText(elo);
@@ -93,8 +95,8 @@ public class HomeController implements Initializable {
             int roomId = Integer.parseInt(parts[1]);
             System.out.println("roomId: " + roomId);
             // Update the current room ID for the user
-            String updateRoomRequest = "updateroom," + usernameLogined + "," + roomId;
-            ConnectionManager.sendRequest(updateRoomRequest);
+//            String updateRoomRequest = "updateroom," + usernameLogined + "," + roomId;
+//            ConnectionManager.sendRequest(updateRoomRequest);
 
             // Load the FXML file for the room window
             FXMLLoader loader = new FXMLLoader(getClass().getResource("room.fxml"));
@@ -102,7 +104,7 @@ public class HomeController implements Initializable {
 
             // Set the room ID in the controller
             RoomController roomController = loader.getController();
-            roomController.initData(String.valueOf(roomId), usernameLogined);
+            roomController.initData(String.valueOf(roomId), characternameLogined);
 
             // Create a new stage for the room window
             Stage roomStage = new Stage();

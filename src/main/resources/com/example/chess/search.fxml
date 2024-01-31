@@ -5,13 +5,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="189.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chess.SearchController">
    <children>
       <AnchorPane layoutY="1.0" prefHeight="97.0" prefWidth="300.0">
          <children>
-            <Button fx:id="searchButton" layoutX="210.0" layoutY="36.0" mnemonicParsing="false" onAction="#search" text="Search" />
             <TextField fx:id="characternameTextField" layoutX="24.0" layoutY="36.0" promptText="Enter character name" />
+            <Button fx:id="searchButton" layoutX="210.0" layoutY="36.0" mnemonicParsing="false" onAction="#search" text="Search" />
          </children>
       </AnchorPane>
       <AnchorPane layoutY="96.0" prefHeight="118.0" prefWidth="300.0">

@@ -12,7 +12,7 @@ public class ConnectionManager {
     public static void connect() {
         try {
             socket = new Socket("127.0.0.1", 5000);
-            System.out.println("create new socket");
+//            System.out.println("create new socket");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -29,6 +29,7 @@ public class ConnectionManager {
     }
 
     public static String sendRequest(String request) {
+        connect();
         try (PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())))
         {

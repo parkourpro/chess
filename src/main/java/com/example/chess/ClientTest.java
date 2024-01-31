@@ -8,7 +8,7 @@ import java.net.Socket;
 
 public class ClientTest {
     public static void main(String[] args) {
-        ConnectionManager.connect();
+//        ConnectionManager.connect();
         String request = "profilec, songoku";
         System.out.println(request);
 

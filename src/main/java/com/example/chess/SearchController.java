@@ -11,8 +11,6 @@ public class SearchController {
     @FXML
     private TextField characternameTextField;
     @FXML
-    private Button searchButton;
-    @FXML
     private TextArea infoTextArea;
 
 
@@ -28,6 +26,7 @@ public class SearchController {
 
         String displayText = getString(response, charactername);
         infoTextArea.setText(displayText);
+        infoTextArea.setEditable(false);
     }
 
     private static String getString(String response, String charactername) {
@@ -42,7 +41,7 @@ public class SearchController {
                     "Character Name: " + charactername + "\n"
                             + "ELO:                    " + elo + "\n"
                             + "Total Matches:     " + totalmatch + "\n"
-                            + "Win Rate:             " + winrate;
+                            + "Win Match:          " + winrate;
         }else{
             displayText = "User not found";
         }

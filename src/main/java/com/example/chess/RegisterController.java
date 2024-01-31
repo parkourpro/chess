@@ -47,7 +47,7 @@ public class RegisterController {
             errorLabel.setText("X");
             return;
         }
-        ConnectionManager.connect();
+//        ConnectionManager.connect();
 
         String userName = username.getText();
         String passWord = password.getText();
