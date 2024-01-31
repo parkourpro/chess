@@ -7,11 +7,12 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class ConnectionManager {
-    private static Socket socket;
+    public static Socket socket;
 
     public static void connect() {
         try {
-            socket = new Socket("localhost", 5000);
+            socket = new Socket("127.0.0.1", 5000);
+            System.out.println("create new socket");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -28,9 +29,9 @@ public class ConnectionManager {
     }
 
     public static String sendRequest(String request) {
-        connect(); // Đảm bảo có kết nối mở trước khi gửi yêu cầu
         try (PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())))
+        {
 
             out.println(request);
             return in.readLine();

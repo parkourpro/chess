@@ -18,24 +18,19 @@
       </AnchorPane>
    </top>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button layoutX="74.0" layoutY="57.0" mnemonicParsing="false" text="Create Room" />
-         </children>
-      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Random Match" />
-            <Button layoutX="14.0" layoutY="70.0" mnemonicParsing="false" text="Ranking Match" />
+            <Button fx:id="createroomButton" layoutX="100.0" layoutY="70.0" mnemonicParsing="false" onAction="#createroom" text="Create Room" />
          </children>
       </AnchorPane>
    </left>
    <right>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="searchplayerButton" layoutX="74.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchPlayer" text="Search player" />
+            <Button fx:id="searchplayerButton" layoutX="36.0" layoutY="70.0" mnemonicParsing="false" onAction="#searchPlayer" text="Search player" />
          </children></AnchorPane>
    </right>
    <bottom>

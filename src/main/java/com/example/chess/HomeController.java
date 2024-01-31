@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,8 +28,8 @@ public class HomeController implements Initializable {
     private Label eloLabel;
     @FXML
     private Button logoutButton;
-    @FXML
-    private Button searchplayerButton;
+//    @FXML
+//    private Button searchplayerButton;
 
     // Phương thức để nhận thông tin người dùng
     public void initData(String username) {
@@ -63,7 +64,6 @@ public class HomeController implements Initializable {
         }
 
 
-
         // Load the FXML file for the registration window
         FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
         Parent root = loader.load();
@@ -81,7 +81,41 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    public void searchPlayer(){
+    public void createroom() throws IOException {
+        // Create a new room in the database
+        String createRoomRequest = "createroom," + usernameLogined;
+        String roomResponse = ConnectionManager.sendRequest(createRoomRequest);
+
+        // Process the room creation response from the server
+        if (roomResponse != null) {
+            // Extract room ID from the response
+            String[] parts = roomResponse.split(",");
+            int roomId = Integer.parseInt(parts[1]);
+            System.out.println("roomId: " + roomId);
+            // Update the current room ID for the user
+            String updateRoomRequest = "updateroom," + usernameLogined + "," + roomId;
+            ConnectionManager.sendRequest(updateRoomRequest);
+
+            // Load the FXML file for the room window
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("room.fxml"));
+            Parent root = loader.load();
+
+            // Set the room ID in the controller
+            RoomController roomController = loader.getController();
+            roomController.initData(String.valueOf(roomId), usernameLogined);
+
+            // Create a new stage for the room window
+            Stage roomStage = new Stage();
+            roomStage.setScene(new Scene(root));
+//            roomStage.initStyle(StageStyle.UNDECORATED);
+            roomStage.show();
+        } else {
+            System.out.println("Failed to create room");
+        }
+    }
+
+    @FXML
+    public void searchPlayer() {
         try {
             // Load the FXML file for the registration window
             FXMLLoader loader = new FXMLLoader(getClass().getResource("search.fxml"));
