@@ -18,6 +18,11 @@ public class ClientMain extends Application {
     }
 
     public static void main(String[] args) {
+<<<<<<< Updated upstream
         launch();
+=======
+//        launch();
+        ChessMain.start();
+>>>>>>> Stashed changes
     }
 }

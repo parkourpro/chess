@@ -18,9 +18,14 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
+<<<<<<< Updated upstream
             <Button layoutX="74.0" layoutY="57.0" mnemonicParsing="false" text="Create Room" />
          </children>
       </AnchorPane>
+=======
+            <Button fx:id="randomMatchButton" layoutX="57.0" layoutY="70.0" mnemonicParsing="false" onAction="#randomMatch" text="Random match" />
+         </children></AnchorPane>
+>>>>>>> Stashed changes
    </center>
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
