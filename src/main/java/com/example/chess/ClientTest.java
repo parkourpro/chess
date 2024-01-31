@@ -18,6 +18,7 @@ public class ClientTest {
 
 
 //        ConnectionManager.connect();
+
         String request2 = "profilec, trunggoku";
         System.out.println(request2);
 
