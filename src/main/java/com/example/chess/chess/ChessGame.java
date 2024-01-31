@@ -285,8 +285,8 @@ public class ChessGame extends Application
         chessBoardGroup.setTranslateX(60);
         chessBoardGroup.setTranslateY(60);
 
-        Function<Color, Color> colorChanger = (color) -> color == Color.NAVAJOWHITE ? Color.SADDLEBROWN : Color.NAVAJOWHITE;
-        Color color = Color.SADDLEBROWN;
+        Function<Color, Color> colorChanger = (color) -> color == Color.NAVAJOWHITE ? Color.DARKBLUE : Color.NAVAJOWHITE;
+        Color color = Color.DARKBLUE;
         for (int row = 0; row <= ChessBoard.NUMBER_OF_ROWS; row++)
         {
             char letter = 'A';
@@ -517,6 +517,9 @@ public class ChessGame extends Application
         restartGame();
 
         this.stage.setScene(this.scene);
+        // To hide the labels
+        this.labelCurrentMove.setVisible(false);
+        this.labelTimer.setVisible(false);
     }
 
     private void restartTimer()

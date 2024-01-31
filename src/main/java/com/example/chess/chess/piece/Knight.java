@@ -8,7 +8,7 @@ public class Knight extends ChessPiece
 {
     public Knight(Side side, ChessboardPosition tilePosition)
     {
-        super(side, tilePosition, side == Side.BLACK ? "D:/20231/network_programming/project/Github/chess/src/main/java/com/example/chess/icons/icons8-knight-50.png" : "D:/20231/network_programming/project/Github/chess/src/main/java/com/example/chess/icons/icons8-knight-50-white.png");
+        super(side, tilePosition, side == Side.BLACK ? "D:/CommonWorkSpace/intelij workspace/chess/src/main/java/com/example/chess/icons/icons8-knight-50.png" : "D:/CommonWorkSpace/intelij workspace/chess/src/main/java/com/example/chess/icons/icons8-knight-50-white.png");
     }
 
     @Override
