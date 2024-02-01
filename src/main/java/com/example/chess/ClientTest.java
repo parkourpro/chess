@@ -8,20 +8,22 @@ import java.net.Socket;
 
 public class ClientTest {
     public static void main(String[] args) {
-        try (Socket socket = new Socket("localhost", 5000);
-             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+//        ConnectionManager.connect();
+        String request = "profilec, songoku";
+        System.out.println(request);
 
-            // Sending a login request to the server
-            String request = "login,son,1233";
-            out.println(request);
+        // Receive and print server response
+        String response = ConnectionManager.sendRequest(request);
+        System.out.println("Server profile response: " + response);
 
-            // Receive and print server response
-            String response = in.readLine();
-            System.out.println("Server response: " + response);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        ConnectionManager.connect();
+
+        String request2 = "profilec, trunggoku";
+        System.out.println(request2);
+
+        // Receive and print server response
+        String response2 = ConnectionManager.sendRequest(request2);
+        System.out.println("Server profile response: " + response2);
     }
 }

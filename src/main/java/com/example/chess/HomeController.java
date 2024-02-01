@@ -1,6 +1,5 @@
 package com.example.chess;
 
-import com.example.chess.chess.ChessMain;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -30,8 +29,6 @@ public class HomeController implements Initializable {
     private Label eloLabel;
     @FXML
     private Button logoutButton;
-    @FXML
-    private Button randomMatchButton;
 //    @FXML
 //    private Button searchplayerButton;
 
@@ -135,11 +132,6 @@ public class HomeController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    @FXML
-    public void randomMatch() {
-        ChessMain.start();
     }
 
     @Override

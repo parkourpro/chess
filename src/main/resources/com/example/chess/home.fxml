@@ -5,38 +5,33 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chess.HomeController">
    <top>
       <AnchorPane prefHeight="60.0" style="-fx-background-color: #fae6ff;" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="25.0" layoutY="21.0" text="Name:" />
             <Label layoutX="327.0" layoutY="21.0" text="ELO: " />
+            <Label fx:id="characternameLabel" layoutX="72.0" layoutY="21.0" />
+            <Label fx:id="eloLabel" layoutX="364.0" layoutY="21.0" />
+            <Button fx:id="logoutButton" layoutX="534.0" layoutY="17.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
          </children>
       </AnchorPane>
    </top>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-<<<<<<< Updated upstream
-            <Button layoutX="74.0" layoutY="57.0" mnemonicParsing="false" text="Create Room" />
-         </children>
-      </AnchorPane>
-=======
-            <Button fx:id="randomMatchButton" layoutX="57.0" layoutY="70.0" mnemonicParsing="false" onAction="#randomMatch" text="Random match" />
-         </children></AnchorPane>
->>>>>>> Stashed changes
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Random Match" />
-            <Button layoutX="14.0" layoutY="70.0" mnemonicParsing="false" text="Ranking Match" />
+            <Button fx:id="createroomButton" layoutX="100.0" layoutY="70.0" mnemonicParsing="false" onAction="#createroom" text="Create Room" />
          </children>
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="searchplayerButton" layoutX="36.0" layoutY="70.0" mnemonicParsing="false" onAction="#searchPlayer" text="Search player" />
+         </children></AnchorPane>
    </right>
    <bottom>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />

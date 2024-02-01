@@ -18,13 +18,10 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class RegisterController {
-
     @FXML
     private TextField username;
-
     @FXML
     private PasswordField password;
-
     @FXML
     private PasswordField repassword;
     @FXML
@@ -35,8 +32,9 @@ public class RegisterController {
     private Button registerButton;
     @FXML
     private Button movetologinButton;
+
     @FXML
-    private void register(ActionEvent event) {
+    private void register(ActionEvent event) throws IOException {
         // Take value from UI
         String enteredUsername = username.getText();
         String enteredPassword = password.getText();
@@ -49,47 +47,28 @@ public class RegisterController {
             errorLabel.setText("X");
             return;
         }
-        try (Socket socket = new Socket("localhost", 5000);
-             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))){
-            String userName = username.getText();
-            String passWord = password.getText();
-            String characterName = charactername.getText();
-            // Sending a register request to the server
-            String request = "signup,"+userName+","+passWord+","+characterName;
-            out.println(request);
+//        ConnectionManager.connect();
 
-            // Receive and print server response
-            String response = in.readLine();
-            System.out.println("Server signup response: " + response);
-            if(response.equals("success")) {
-                // Load the FXML file for the registration window
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
-                Parent root = loader.load();
+        String userName = username.getText();
+        String passWord = password.getText();
+        String characterName = charactername.getText();
 
-                // Create a new stage for the registration window
-                Stage loginStage = new Stage();
-                loginStage.setTitle("Login");
-                loginStage.setScene(new Scene(root));
+        // Sending a register request to the server
+        String request = "signup," + userName + "," + passWord + "," + characterName;
+        System.out.println(request);
 
-                // Show the registration window
-                loginStage.show();
-
-                //get register stage
-                Stage registerStage = (Stage) registerButton.getScene().getWindow();
-
-                // Close register stage
-                registerStage.close();
-            } else {
-                // xử lý đăng nhập thất bại
-            }
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
+        // Receive and print server response
+        String response = ConnectionManager.sendRequest(request);
+        System.out.println("Server signup response: " + response);
+        if (response != null && response.equals("success")) {
+            forwardToLogin();
+        } else {
+            // xử lý đăng nhập thất bại
         }
+        ConnectionManager.disconnect();
     }
-//    @FXML
+
+    //    @FXML
     public void movetoLogin(ActionEvent event) {
         try {
             // Load the FXML file for the registration window
@@ -110,5 +89,25 @@ public class RegisterController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void forwardToLogin() throws IOException {
+        // Load the FXML file for the registration window
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+        Parent root = loader.load();
+
+        // Create a new stage for the registration window
+        Stage loginStage = new Stage();
+        loginStage.setTitle("Login");
+        loginStage.setScene(new Scene(root));
+
+        // Show the registration window
+        loginStage.show();
+
+        //get register stage
+        Stage registerStage = (Stage) registerButton.getScene().getWindow();
+
+        // Close register stage
+        registerStage.close();
     }
 }

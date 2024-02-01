@@ -106,8 +106,6 @@ public class ChessGame extends Application
         primaryStage.setTitle(Localization.translate("chess"));
         primaryStage.setOnCloseRequest(windowEvent -> closeGame());
         primaryStage.show();
-
-        hostGame();
     }
 
     private void closeGame()
@@ -143,13 +141,33 @@ public class ChessGame extends Application
 
     private void showConnectToIpPopup()
     {
-        // Replace "your_hardcoded_ip_address_here" with the actual IP address you want to use
-        String hardcodedIpAddress = "192.168.0.12";
+        // Show modal window where user can enter IP address of the host
 
-        connectToIp(hardcodedIpAddress);
+        System.out.println("Connecting to ip...");
+
+        Popup popup = new Popup();
+
+        VBox vBox = new VBox();
+        vBox.setStyle("-fx-border-width: 1px");
+        vBox.setStyle("-fx-border-color: black");
+        vBox.setBackground(new Background(new BackgroundFill(Color.NAVAJOWHITE, null, null)));
+
+        TextField ipAddressField = new TextField();
+        ipAddressField.setOnAction(actionEvent -> {
+            popup.hide();
+            connectToIp(ipAddressField.getText());
+        });
+
+        Label label = new Label(Localization.translate("online.enter_ip_address") + ":");
+        label.setFont(Font.font("Arial", FontWeight.MEDIUM, FontPosture.REGULAR, 20));
+        vBox.getChildren().add(label);
+        vBox.getChildren().add(ipAddressField);
+
+        popup.getContent().add(vBox);
+        popup.show(this.stage);
     }
 
-    public void connectToIp(String ipAddress)
+    private void connectToIp(String ipAddress)
     {
         System.out.println("Chosen IP Address: " + ipAddress);
 
@@ -175,7 +193,7 @@ public class ChessGame extends Application
         }
     }
 
-    public void hostGame()
+    private void hostGame()
     {
         System.out.println("Hosting game...");
 
@@ -267,8 +285,8 @@ public class ChessGame extends Application
         chessBoardGroup.setTranslateX(60);
         chessBoardGroup.setTranslateY(60);
 
-        Function<Color, Color> colorChanger = (color) -> color == Color.WHITE ? Color.BROWN : Color.WHITE;
-        Color color = Color.BROWN;
+        Function<Color, Color> colorChanger = (color) -> color == Color.NAVAJOWHITE ? Color.SADDLEBROWN : Color.NAVAJOWHITE;
+        Color color = Color.SADDLEBROWN;
         for (int row = 0; row <= ChessBoard.NUMBER_OF_ROWS; row++)
         {
             char letter = 'A';
@@ -499,10 +517,6 @@ public class ChessGame extends Application
         restartGame();
 
         this.stage.setScene(this.scene);
-
-        // To hide the labels
-        this.labelCurrentMove.setVisible(false);
-        this.labelTimer.setVisible(false);
     }
 
     private void restartTimer()
