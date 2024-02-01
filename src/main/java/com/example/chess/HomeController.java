@@ -141,9 +141,9 @@ public class HomeController implements Initializable {
     }
     @FXML
     public void viewrankingtop(){
-        int a = 10;
-        String viewrankingtopRequest = "viewrankingtop," + ;
-        String roomResponse = ConnectionManager.sendRequest(createRoomRequest);
+//        int a = 10;
+//        String viewrankingtopRequest = "viewrankingtop," + ;
+//        String roomResponse = ConnectionManager.sendRequest(createRoomRequest);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
