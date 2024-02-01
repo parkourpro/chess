@@ -1,5 +1,6 @@
 package com.example.chess;
 
+import com.example.chess.chess.ChessMain;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -133,7 +134,17 @@ public class HomeController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    @FXML
+    public void randommatch(){
+        System.out.println(111);
+//        ChessMain.start();
+    }
+    @FXML
+    public void viewrankingtop(){
+        int a = 10;
+        String viewrankingtopRequest = "viewrankingtop," + ;
+        String roomResponse = ConnectionManager.sendRequest(createRoomRequest);
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Khởi tạo
