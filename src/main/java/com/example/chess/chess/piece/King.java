@@ -12,7 +12,7 @@ public class King extends ChessPiece
 
     public King(Side side, ChessboardPosition position)
     {
-        super(side, position, side == Side.BLACK ? "D:/20231/network_programming/project/Github/chess/src/main/java/com/example/chess/icons/icons8-king-50.png" : "D:/20231/network_programming/project/Github/chess/src/main/java/com/example/chess/icons/icons8-king-50-white.png");
+        super(side, position, side == Side.BLACK ? "D:/CommonWorkSpace/intelij workspace/chess/src/main/java/com/example/chess/icons/icons8-king-50.png" : "D:/CommonWorkSpace/intelij workspace/chess/src/main/java/com/example/chess/icons/icons8-king-50-white.png");
     }
 
     public boolean hasMoved()
